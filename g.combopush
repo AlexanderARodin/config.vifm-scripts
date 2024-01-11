@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e
 
+if [ -z "$@" ]; then
+	echo 'there is no commit description' >&2
+fi
+
 git add .
 git commit -m "'$@'"
 git push
